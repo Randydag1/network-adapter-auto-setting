@@ -1,4 +1,4 @@
-function refresh() {
+document.getElementById("create-network-ai-workspace").addEventListener("click", createNewWorkspace, false);function refresh() {
     var activeWorkspace = workspaceManager._findWorkspaceById(workspaceManager._activeWorkspaceId);
     var tools = menu._tools;
     var htmlString = "";
