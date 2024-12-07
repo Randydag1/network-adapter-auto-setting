@@ -1,4 +1,35 @@
-function checkNetworkStatus() {
+function refresh() {
+    var activeWorkspace = workspaceManager._findWorkspaceById(workspaceManager._activeWorkspaceId);
+    var tools = menu._tools;
+    var htmlString = "";
+    
+    // Network monitoring integration
+    checkNetworkStatus(); // Call network monitoring function periodically
+
+    // Existing code to layout tools
+    for (var i = 0, len = tools.length; i < len; i++) {
+        var tool = tools[i];
+        if (tool.tag) {
+            tags = true;
+            break;
+        }
+        htmlString += '<li class="' + cssClassTool + '" ' + attributeUri + '="' + tool.uri + '"><input type="checkbox" /><label>' + tool.name + '</label></li>';
+    }
+    // Further code to organize tools by tags, if applicable
+}function createNewWorkspace() {
+    var newWorkspaceName = "Network Learning AI Foundation";
+    var newWorkspace = workspaceManager._createWorkspace(newWorkspaceName); // Function to create a new workspace
+    newWorkspace._addTools([
+        { name: "Ping Test", uri: "/path_to/ping_tool" },
+        { name: "Traceroute", uri: "/path_to/traceroute_tool" },
+        { name: "Network Stats Logger", uri: "/path_to/network_stats_logger" },
+        // Add AI-based learning tools, such as machine learning models for pattern recognition and prediction
+    ]);
+
+    // Set this new workspace as the active workspace
+    workspaceManager._activeWorkspaceId = newWorkspace.id;
+    refresh(); // Refresh to display tools in the new workspace
+}function checkNetworkStatus() {
     // PowerShell script to check network status
     fetch('/path_to_your_check_network_status.ps1')
         .then(response => response.text())
