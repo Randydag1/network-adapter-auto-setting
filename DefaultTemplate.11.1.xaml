@@ -1,4 +1,11 @@
-# PowerShell script to check network status
+#!/bin/bash
+ping -c 1 google.com > /dev/null
+if [ $? -ne 0 ]; then
+  echo "Network is unreachable."
+  # Trigger webhook for alerting
+else
+  echo "Network is reachable."
+fi# PowerShell script to check network status
 if (Test-Connection -ComputerName "google.com" -Count 1 -ErrorAction Stop) {
     Write-Output "Network is reachable."
 } else {
