@@ -1,4 +1,9 @@
-﻿(function () {
+function logNetworkUsage() {
+    // Example of logging network usage to a server
+    fetch('/logNetworkUsage', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'﻿(function () {
 
     "use strict";
 
