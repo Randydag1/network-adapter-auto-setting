@@ -1,4 +1,4 @@
-To write the scripts and specify paths for network monitoring tools and AI integration for your new workspace, here’s a step-by-step guide:
+document.getElementById("create-network-ai-workspace").addEventListener("click", createNewWorkspace, false);To write the scripts and specify paths for network monitoring tools and AI integration for your new workspace, here’s a step-by-step guide:
 
 1. Script for Network Monitoring Tools
 
