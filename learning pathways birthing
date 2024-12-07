@@ -19,6 +19,9 @@ def evaluate_data(data, rules):
 
 # Function to create chain codes based on evaluation results
 def create_chain_codes(results):
+git add .
+git commit -m "Initial project structure and setup"
+git push origin main
     chain_codes = {}
     for key, value in results.items():
         chain_codes[key] = len(value)  # Count the number of matching entries as chain code
